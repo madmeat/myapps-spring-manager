@@ -5,23 +5,27 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.google.common.collect.ImmutableList;
 import com.myapps.manager.model.User;
 import com.myapps.manager.parser.IUserParser;
-import com.myapps.manager.parser.UserParser;
 
 @Service("usetManagementService")
 public class UserManagementServiceImpl implements IUserManagementService
 {
     private List<User> users;
 
+    @Autowired
+    @Qualifier("userParser")
+    private IUserParser userParser;
+
     // init users section
     {
 	try
 	{
-	    IUserParser userParser = new UserParser();
 	    users = userParser.parseFromResource("/users");
 	} catch (IOException e)
 	{

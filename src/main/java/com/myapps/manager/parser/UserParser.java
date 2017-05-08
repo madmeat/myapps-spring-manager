@@ -9,8 +9,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.myapps.manager.model.User;
 
+@Component("userParser")
 public class UserParser implements IUserParser
 {
     private static final String COLON = ":";
