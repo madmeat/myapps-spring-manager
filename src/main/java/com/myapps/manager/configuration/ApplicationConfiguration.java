@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "com.myapps.manager" })
+@ComponentScan(basePackages = { "com.myapps" })
 public class ApplicationConfiguration
 {
 

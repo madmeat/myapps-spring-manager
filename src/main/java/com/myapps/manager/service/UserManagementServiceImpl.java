@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ public class UserManagementServiceImpl implements IUserManagementService
     private IUserParser userParser;
 
     // init users section
+    @PostConstruct
+    public void init()
     {
 	try
 	{
